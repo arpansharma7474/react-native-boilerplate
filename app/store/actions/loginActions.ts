@@ -40,5 +40,6 @@ export function disableLoader() {
 export function logOut() {
   return {
     type: types.LOG_OUT,
+
   };
 }

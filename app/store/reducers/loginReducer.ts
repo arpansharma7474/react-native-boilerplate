@@ -43,6 +43,7 @@ export const loginReducer = createReducer(initialState, {
   [types.LOG_OUT](state: ILoginState) {
     return {
       ...state,
+      username: "",
       isLoggedIn: false,
     };
   },

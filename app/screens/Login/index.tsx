@@ -13,7 +13,6 @@ interface IState {
 
 const Login: React.FC = () => {
   const id = useSelector((state: IState) => state.loginReducer.id);
-  const userName = useSelector((state: IState) => state.loginReducer.username);
   const dispatch = useDispatch();
   const onLogin = () => {
     dispatch(loginActions.requestLogin('test', '1234'))
@@ -24,7 +23,6 @@ const Login: React.FC = () => {
     <View style={styles.container}>
       <View style={styles.container}>
         <Text style={styles.login}>Login Status : {id}</Text>
-        <Text style={styles.login}>userName : {userName}</Text>
         <Button icon="login" mode="outlined" onPress={onLogin}>
           Login
         </Button>
