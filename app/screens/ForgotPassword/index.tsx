@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Button } from 'react-native-paper';
-
 import NavigationService from 'app/navigation/NavigationService';
 
 import styles from './styles';

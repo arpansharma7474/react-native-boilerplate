@@ -1,40 +1,26 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import { persistStore, persistCombineReducers } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
-import { createLogger } from 'redux-logger';
-import createSagaMiddleware from 'redux-saga';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { persistReducer } from 'redux-persist';
+import thunk from 'redux-thunk';
+import { loadingReducer } from './reducers/loadingReducer';
+import { loginReducer } from './reducers/loginReducer';
+import { themeReducer } from './reducers/themeReducer';
 
-import rootReducers from 'app/store/reducers'; // where reducers is a object of reducers
-import sagas from 'app/store/sagas';
-
-const config = {
-  key: 'root',
+const persistConfig = {
   storage: AsyncStorage,
-  blacklist: ['loadingReducer'],
-  debug: true, //to get useful logging
+  key: 'persistedReducer',
+  version: 1,
 };
 
-const middleware = [];
-const sagaMiddleware = createSagaMiddleware();
-
-middleware.push(sagaMiddleware);
-
-if (__DEV__) {
-  middleware.push(createLogger());
-}
-
-const reducers = persistCombineReducers(config, rootReducers);
-const enhancers = [applyMiddleware(...middleware)];
-// const initialState = {};
-const persistConfig: any = { enhancers };
-const store = createStore(reducers, undefined, compose(...enhancers));
-const persistor = persistStore(store, persistConfig, () => {
-  //   console.log('Test', store.getState());
+const rootReducer = combineReducers({
+  persistedReducer: persistReducer(persistConfig, loginReducer),
+  loginReducer: loginReducer,
+  loadingReducer: loadingReducer,
+  themeReducer: themeReducer
 });
-const configureStore = () => {
-  return { persistor, store };
-};
 
-sagaMiddleware.run(sagas);
+const store = createStore(rootReducer, {}, applyMiddleware(thunk));
 
-export default configureStore;
+// type to be used in useSelector
+export type RootState = ReturnType<typeof rootReducer>;
+export default store
