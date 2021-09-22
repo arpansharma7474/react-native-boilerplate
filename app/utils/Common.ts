@@ -5,9 +5,9 @@ import ImagePicker, {
   ImageOrVideo,
   Options,
 } from 'react-native-image-crop-picker';
-import { showAlert } from './AlertHelper';
-import { Log } from './Logger';
-import { checkCameraPermission } from './PermissionHelper';
+import { showAlert } from '../lib/alertHelper';
+import { Log } from '../lib/logger';
+import { checkCameraPermission } from '../lib/permissions/permissionHelper';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;

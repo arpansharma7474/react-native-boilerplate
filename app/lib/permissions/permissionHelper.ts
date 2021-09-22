@@ -1,7 +1,7 @@
 import { check, RESULTS, request } from 'react-native-permissions';
 import { Linking } from 'react-native';
-import { showAlert } from './AlertHelper';
-import String from './String'
+import { showAlert } from '../alertHelper';
+import String from '../../utils/strings'
 import { PERMISSIONS } from 'react-native-permissions'
 
 export const checkPermission = (permission, alertMessage): Promise<number> => {

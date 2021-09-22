@@ -1,7 +1,7 @@
 import { checkResponse } from './HandleResponse';
 import NetInfo from '@react-native-community/netinfo';
-import Config from './Config';
-import Error from './Error';
+import Config from '../utils/Config';
+import Error from '../utils/Error';
 export const executePostRequest = async (
   endpoint: string,
   paramsObject: Object,
