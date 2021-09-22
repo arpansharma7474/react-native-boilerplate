@@ -23,7 +23,7 @@ const Login: React.FC = () => {
     <View style={styles.container}>
       <View style={styles.container}>
         <Text style={styles.login}>Login Status : {id}</Text>
-        <Button icon="login" mode="outlined" onPress={onLogin}>
+        <Button mode="outlined" onPress={onLogin}>
           Login
         </Button>
         <Button

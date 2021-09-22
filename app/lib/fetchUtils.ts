@@ -1,7 +1,6 @@
 import { checkResponse } from './HandleResponse';
 import NetInfo from '@react-native-community/netinfo';
-import Config from '../utils/Config';
-import Error from '../utils/Error';
+import String from '../utils/strings';
 export const executePostRequest = async (
   endpoint: string,
   paramsObject: Object,
@@ -13,7 +12,7 @@ export const executePostRequest = async (
     if (!netInfo.isConnected) {
       return {
         code: 400,
-        error: [{ error: Error.error.error_internet_connection }],
+        error: [{ error: String.error_internet_connection }],
       };
     }
     let formBody = isUrlEncoded ? encodeParamsObject(paramsObject) : [];
@@ -58,7 +57,7 @@ export const executeGetRequest = async (endpoint: string, token?: string) => {
     if (!netInfo.isConnected) {
       return {
         code: 400,
-        error: [{ error: Error.error.error_internet_connection }],
+        error: [{ error: String.error_internet_connection }],
       };
     }
     const res = await fetch(`${Config.server.base_url}/${endpoint}`, {
@@ -93,7 +92,7 @@ export const executePutRequest = async (
     if (!netInfo.isConnected) {
       return {
         code: 400,
-        error: [{ error: Error.error.error_internet_connection }],
+        error: [{ error: String.error_internet_connection }],
       };
     }
     const res = await fetch(`${Config.server.base_url}/${endpoint}`, {

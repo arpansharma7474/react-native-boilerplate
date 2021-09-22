@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch } from 'react-native-paper';
 
@@ -22,7 +22,6 @@ const ThemeController: React.FC = () => {
   return (
     <View style={styles.container}>
       <Switch value={isDark} onValueChange={onToggleTheme} />
-      <Icon name={iconName} size={20} style={styles.icon} color={iconColor} />
     </View>
   );
 };

@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.login}>userName:{userName}</Text>
-      <Button icon="logout" mode="outlined" onPress={onLogout}>
+      <Button mode="outlined" onPress={onLogout}>
         Logout
       </Button>
     </View>
