@@ -2,58 +2,35 @@ import { checkResponse } from './checkResponse';
 import NetInfo from '@react-native-community/netinfo';
 import String from '../utils/strings';
 import ApiConfig from '../config/api-config';
+import HttpError from './HttpError';
+import { Log } from './logger';
 
 // Fetch Utils class containing fetch and netInfo Boilerplate
-
 export const executePostRequest = async (
   endpoint: string,
-  paramsObject: Object,
+  paramsObject?: Object,
   token?: string,
   isUrlEncoded = false,
 ) => {
-  try {
-    const netInfo = await NetInfo.fetch();
-    if (!netInfo.isConnected) {
-      return {
-        code: 400,
-        error: [{ error: String.error_internet_connection }],
-      };
-    }
-    let formBody = isUrlEncoded ? encodeParamsObject(paramsObject) : [];
-    const res = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
-      method: 'POST',
-      headers: getAPIHeader(token, isUrlEncoded),
-      body: isUrlEncoded ? formBody : JSON.stringify(paramsObject),
-    });
-    checkResponse(res);
-    if (res.status != 200) {
-      return {
-        code: res.status,
-        error: res.text(),
-      };
-    }
-    let response
-    try {
-      response = await res.json()
-    }
-    catch (error) {
-      if (res.status == 200)
-        return {
-          code: res.status
-        }
-      else
-        throw error
-    }
-    return {
-      code: res.status,
-      response,
-    };
-  } catch (error) {
-    return {
-      code: 400,
-      error: error + '',
-    };
+  const netInfo = await NetInfo.fetch();
+  if (!netInfo.isConnected)
+    throw new HttpError({ message: String.error_internet_connection, statusCode: 400 })
+  // create form body request for urlEncoded requested
+  const body = isUrlEncoded ? encodeParamsObject(paramsObject) : JSON.stringify(paramsObject);
+  const postResponse = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
+    method: 'POST',
+    headers: getAPIHeader(token, isUrlEncoded),
+    body
+  });
+  checkResponse(postResponse);
+  if (!postResponse.ok) {
+    throw new HttpError({
+      statusCode: postResponse.status,
+      message: postResponse.statusText
+    })
   }
+  const jsonRes = await postResponse.json()
+  return jsonRes
 };
 
 export const executeGetRequest = async (endpoint: string, token?: string) => {
