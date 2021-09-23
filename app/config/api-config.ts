@@ -1,4 +1,4 @@
-/* App config for apis
+/* Config urls
  */
 const ApiConfig = {
   BASE_URL: 'http://wolverine-dev.com/',

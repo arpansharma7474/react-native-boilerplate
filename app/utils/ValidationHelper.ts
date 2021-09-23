@@ -1,4 +1,6 @@
-import Error from './Error'
+import ApiConfig from "../config/api-config";
+import strings from "./strings";
+
 interface ValidationType {
     code: number,
     validationObject?: ValidationLoginType | ValidationForgotPasswordType
@@ -29,8 +31,8 @@ export const validateLogin = (
     const obj: ValidationLoginType = {};
     return new Promise((resolve, reject) => {
         if (!email)
-            obj.email = Error.error.error_empty_email;
-        else if (!obj.email && !Error.regex.regExEmail.test(email.trim()))
+            obj.email = strings.error_empty_email;
+        else if (!obj.email && !strings.regex_email.test(email.trim()))
             obj.email = Error.error.error_invalid_email;
         if (!password)
             obj.password = Error.error.error_empty_password;

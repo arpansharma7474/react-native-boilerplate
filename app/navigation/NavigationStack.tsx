@@ -8,9 +8,10 @@ import Login from 'app/screens/Login';
 import Home from 'app/screens/Home';
 import ForgotPassword from 'app/screens/ForgotPassword';
 
-import ThemeController from '../components/ThemeController';
+
 import { StatusBar } from 'react-native';
 import { ILoginState } from 'app/models/reducers/login';
+import { ThemeController } from '../components';
 
 const Stack = createStackNavigator();
 const AuthStack = createStackNavigator();

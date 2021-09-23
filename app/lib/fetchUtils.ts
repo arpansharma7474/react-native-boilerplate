@@ -1,6 +1,10 @@
-import { checkResponse } from './HandleResponse';
+import { checkResponse } from './checkResponse';
 import NetInfo from '@react-native-community/netinfo';
 import String from '../utils/strings';
+import ApiConfig from '../config/api-config';
+
+// Fetch Utils class containing fetch and netInfo Boilerplate
+
 export const executePostRequest = async (
   endpoint: string,
   paramsObject: Object,
@@ -16,7 +20,7 @@ export const executePostRequest = async (
       };
     }
     let formBody = isUrlEncoded ? encodeParamsObject(paramsObject) : [];
-    const res = await fetch(`${Config.server.base_url}/${endpoint}`, {
+    const res = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
       method: 'POST',
       headers: getAPIHeader(token, isUrlEncoded),
       body: isUrlEncoded ? formBody : JSON.stringify(paramsObject),
@@ -51,6 +55,7 @@ export const executePostRequest = async (
     };
   }
 };
+
 export const executeGetRequest = async (endpoint: string, token?: string) => {
   try {
     const netInfo = await NetInfo.fetch();
@@ -60,7 +65,7 @@ export const executeGetRequest = async (endpoint: string, token?: string) => {
         error: [{ error: String.error_internet_connection }],
       };
     }
-    const res = await fetch(`${Config.server.base_url}/${endpoint}`, {
+    const res = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
       method: 'GET',
       headers: getAPIHeader(token),
     });
@@ -83,6 +88,7 @@ export const executeGetRequest = async (endpoint: string, token?: string) => {
     };
   }
 };
+
 export const executePutRequest = async (
   endpoint: string,
   token?: string,
@@ -95,7 +101,7 @@ export const executePutRequest = async (
         error: [{ error: String.error_internet_connection }],
       };
     }
-    const res = await fetch(`${Config.server.base_url}/${endpoint}`, {
+    const res = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
       method: 'PUT',
       headers: getAPIHeader(token),
     });
@@ -118,6 +124,7 @@ export const executePutRequest = async (
     };
   }
 };
+
 const getAPIHeader = (token?: string, isUrlEncoded?: boolean) => {
   return {
     "Access-Control-Allow-Origin": "*",
@@ -129,6 +136,7 @@ const getAPIHeader = (token?: string, isUrlEncoded?: boolean) => {
     'X-app-name': 'frontend',
   };
 };
+
 const encodeParamsObject = (paramsObject: any) => {
   let formBody = [];
   for (var property in paramsObject) {

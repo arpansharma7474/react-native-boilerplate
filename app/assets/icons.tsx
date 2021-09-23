@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconTypes, Icons } from './Images';
+import { IconTypes } from './images';
 
 export const getIcons = (type: IconTypes, iconSize = 20) => {
     switch (type) {

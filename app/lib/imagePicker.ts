@@ -3,23 +3,38 @@ import ImagePicker, {
     ImageOrVideo,
     Options,
 } from 'react-native-image-crop-picker';
+import { moderateScale } from 'react-native-size-matters';
+import AppStyles from '../config/styles';
 import { showAlert } from '../lib/alertHelper';
 import { Log } from '../lib/logger';
-import { checkCameraPermission, checkGalleryPermission } from "../lib/permissions/permissionHelper"
+import {
+    checkCameraPermission,
+    checkGalleryPermission
+} from "../lib/permissions/permissionHelper"
 import Strings from "../utils/strings"
 
-export const selectImage = async (
-    options: Options = {
-        cropping: true,
-    },
-): Promise<ImageOrVideo> => {
+const DEFAULT_OPTIONS: Options = {
+    cropping: true,
+    freeStyleCropEnabled: true,
+    cropperToolbarColor: AppStyles.color.COLOR_THEME,
+    cropperToolbarWidgetColor: 'white',
+    cropperStatusBarColor: AppStyles.color.COLOR_THEME,
+    width: moderateScale(500),
+    height: moderateScale(500),
+    mediaType: "photo"
+}
+
+export const selectImage = async (options?: Options): Promise<ImageOrVideo> => {
     return new Promise<ImageOrVideo>(async (resolve, reject) => {
         try {
             const permRes = await checkGalleryPermission();
             if (permRes != 1) return;
-            let res: ImageOrVideo = await ImagePicker.openPicker(options);
-            if (res) resolve(res);
-        } catch (error) {
+            let response: ImageOrVideo = await ImagePicker.openPicker({
+                ...DEFAULT_OPTIONS,
+                ...options
+            });
+            if (response) resolve(response);
+        } catch (error: any) {
             Log(error, "error selectImage")
             if (
                 error.message === 'Required permission missing' &&
@@ -42,23 +57,17 @@ export const selectImage = async (
 /**
  * Function to pick single image from camera
  */
-export const captureImage = async (
-    options: Options = {
-        cropping: true,
-    },
-): Promise<ImageOrVideo> => {
+export const captureImage = async (options?: Options): Promise<ImageOrVideo> => {
     return new Promise<ImageOrVideo>(async (resolve, reject) => {
         try {
             const permRes = await checkCameraPermission();
             if (permRes != 1) return;
             let res: ImageOrVideo = await ImagePicker.openCamera({
-                ...options,
-                compressImageQuality: 0.6,
-                maxWidth: 800,
-                maxHeight: 800,
+                ...DEFAULT_OPTIONS,
+                ...options
             });
             if (res) resolve(res);
-        } catch (error) {
+        } catch (error: any) {
             Log(error, 'Error selectImage');
             if (
                 error.message === 'Required permission missing' &&
