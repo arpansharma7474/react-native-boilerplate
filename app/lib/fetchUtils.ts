@@ -33,73 +33,50 @@ export const executePostRequest = async (
   return jsonRes
 };
 
-export const executeGetRequest = async (endpoint: string, token?: string) => {
-  try {
-    const netInfo = await NetInfo.fetch();
-    if (!netInfo.isConnected) {
-      return {
-        code: 400,
-        error: [{ error: String.error_internet_connection }],
-      };
-    }
-    const res = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
-      method: 'GET',
-      headers: getAPIHeader(token),
-    });
-    checkResponse(res);
-    if (res.status != 200) {
-      return {
-        code: res.status,
-        error: res.text(),
-      };
-    }
-    const response = await res.json();
-    return {
-      code: res.status,
-      response: response,
-    };
-  } catch (err) {
-    return {
-      code: 400,
-      error: err + '',
-    };
+// Get Request
+export const executeGetRequest = async (
+  endpoint: string,
+  token?: string
+) => {
+  const netInfo = await NetInfo.fetch();
+  if (!netInfo.isConnected)
+    throw new HttpError({ message: String.error_internet_connection, statusCode: 400 })
+  const getResponse = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
+    method: 'GET',
+    headers: getAPIHeader(token),
+  });
+  checkResponse(getResponse);
+  if (!getResponse.ok) {
+    throw new HttpError({
+      statusCode: getResponse.status,
+      message: getResponse.statusText
+    })
   }
+  const jsonRes = await getResponse.json()
+  return jsonRes
 };
 
+// Put Request
 export const executePutRequest = async (
   endpoint: string,
   token?: string,
 ) => {
-  try {
-    const netInfo = await NetInfo.fetch();
-    if (!netInfo.isConnected) {
-      return {
-        code: 400,
-        error: [{ error: String.error_internet_connection }],
-      };
-    }
-    const res = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
-      method: 'PUT',
-      headers: getAPIHeader(token),
-    });
-    checkResponse(res);
-    if (res.status != 200) {
-      return {
-        code: res.status,
-        error: res.text(),
-      };
-    }
-    const response = await res.json();
-    return {
-      code: res.status,
-      response: response,
-    };
-  } catch (err) {
-    return {
-      code: 400,
-      error: err + '',
-    };
+  const netInfo = await NetInfo.fetch();
+  if (!netInfo.isConnected)
+    throw new HttpError({ message: String.error_internet_connection, statusCode: 400 })
+  const putResponse = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
+    method: 'PUT',
+    headers: getAPIHeader(token),
+  });
+  checkResponse(putResponse);
+  if (!putResponse.ok) {
+    throw new HttpError({
+      statusCode: putResponse.status,
+      message: putResponse.statusText
+    })
   }
+  const jsonRes = await putResponse.json()
+  return jsonRes
 };
 
 const getAPIHeader = (token?: string, isUrlEncoded?: boolean) => {
