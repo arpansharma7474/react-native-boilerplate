@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C0034E753E707BEC7F6C22E /* libPods-RNBoilerPlate-RNBoilerPlateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEDA297F9E38174EFABD9F4 /* libPods-RNBoilerPlate-RNBoilerPlateTests.a */; };
+		AD2E94E12705904300E2F00B /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2E94E02705904300E2F00B /* libswiftWebKit.tbd */; };
 		D377B620A197FE77DAEA05BD /* libPods-RNBoilerPlate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C44A80C424A9BAF97858DAB /* libPods-RNBoilerPlate.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		9DA2E65FB2FC3D85825B9BEC /* Pods-RNBoilerPlate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNBoilerPlate.release.xcconfig"; path = "Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate.release.xcconfig"; sourceTree = "<group>"; };
 		A93E5079926A4000828734FC /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		AA1929337C354D4ABCB2B856 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		AD2E94E02705904300E2F00B /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		D43AD0A9557CD35E97F2C388 /* Pods-RNBoilerPlate-RNBoilerPlateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNBoilerPlate-RNBoilerPlateTests.debug.xcconfig"; path = "Target Support Files/Pods-RNBoilerPlate-RNBoilerPlateTests/Pods-RNBoilerPlate-RNBoilerPlateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAE3BE1DFF01413F93D051DD /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		E0083811A37A4714A6DED265 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2E94E12705904300E2F00B /* libswiftWebKit.tbd in Frameworks */,
 				D377B620A197FE77DAEA05BD /* libPods-RNBoilerPlate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +129,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD2E94E02705904300E2F00B /* libswiftWebKit.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				7C44A80C424A9BAF97858DAB /* libPods-RNBoilerPlate.a */,
 				6EEDA297F9E38174EFABD9F4 /* libPods-RNBoilerPlate-RNBoilerPlateTests.a */,
@@ -199,8 +203,8 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				7A0A82FA374DABA2362BD759 /* [CP] Embed Pods Frameworks */,
 				A8AE9FF6A4A9A1091CC7DC0D /* [CP] Copy Pods Resources */,
+				42CF6E242E3650322BBA608F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,8 +226,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				21DCA7BBFC3FA8094341B248 /* [CP] Embed Pods Frameworks */,
 				2FB4247ECC062E378C2FD8A8 /* [CP] Copy Pods Resources */,
+				3A0BCBAB507C2B82103962E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,23 +308,6 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		21DCA7BBFC3FA8094341B248 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2FB4247ECC062E378C2FD8A8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,7 +325,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A0A82FA374DABA2362BD759 /* [CP] Embed Pods Frameworks */ = {
+		3A0BCBAB507C2B82103962E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNBoilerPlate/Pods-RNBoilerPlate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42CF6E242E3650322BBA608F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -530,6 +534,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -554,6 +562,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

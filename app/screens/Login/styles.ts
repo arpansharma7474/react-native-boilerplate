@@ -15,6 +15,17 @@ const styles = StyleSheet.create({
   labelStyle: {
     fontSize: 12,
   },
+  fbButton: {
+    backgroundColor: 'blue',
+    marginVertical: 20,
+    padding: 10,
+    borderRadius: 6
+  },
+  fbText: {
+    color: 'white',
+    fontWeight: 'bold'
+
+  }
 });
 
 export default styles;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { Text, Button } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './styles';
@@ -8,6 +8,7 @@ import NavigationService from 'app/navigation/NavigationService';
 import { executePostRequest } from '../../lib/fetchUtils';
 import { Log } from '../../lib/logger';
 import ApiConfig from '../../config/api-config';
+import { facebookLogin } from '../../store/actions/SocialLoginActions';
 
 interface IState {
   loginReducer: ILoginState;
@@ -37,13 +38,14 @@ const Login: React.FC = () => {
         <Button mode="outlined" onPress={onLogin}>
           Login
         </Button>
-        <Button
-          mode="text"
-          style={styles.forgot}
-          labelStyle={styles.labelStyle}
-          onPress={onForgot}>
-          Forgot Password
-        </Button>
+        <TouchableOpacity
+          onPress={() => facebookLogin()}
+          style={styles.fbButton}>
+          <Text style={styles.fbText}>
+            Log in with facebook
+          </Text>
+
+        </TouchableOpacity>
       </View>
     </View>
   );

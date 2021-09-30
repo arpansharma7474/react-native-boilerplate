@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RNBoilerPlate</string>
+    <string name="facebook_app_id">4125793814195948</string>
+<string name="facebook_client_token">fb4125793814195948</string>
 </resources>
