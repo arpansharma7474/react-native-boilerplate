@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "212296929890",
+    "project_id": "boilerplate-d2140",
+    "storage_bucket": "boilerplate-d2140.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212296929890:android:c8eedfa28412606731373b",
+        "android_client_info": {
+          "package_name": "com.rnboilerplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212296929890-hajktb1i3jme0c4ank3lrjqmvlvbeiti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMb97kXa_qDBb9df1hbeKr2sK9Cxc6oM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212296929890-hajktb1i3jme0c4ank3lrjqmvlvbeiti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

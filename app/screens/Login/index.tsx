@@ -28,8 +28,10 @@ const Login: React.FC = () => {
       Log(err, "post error")
     }
   }
+  const onFacebookClick = async () => {
+    const res = await facebookLogin()
 
-  const onForgot = () => NavigationService.navigate('ForgotPassword');
+  };
 
   return (
     <View style={styles.container}>
@@ -39,7 +41,7 @@ const Login: React.FC = () => {
           Login
         </Button>
         <TouchableOpacity
-          onPress={() => facebookLogin()}
+          onPress={onFacebookClick}
           style={styles.fbButton}>
           <Text style={styles.fbText}>
             Log in with facebook
