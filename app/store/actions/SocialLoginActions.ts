@@ -3,7 +3,6 @@ import auth from '@react-native-firebase/auth'
 import {
     GoogleSignin,
     statusCodes,
-
 } from '@react-native-google-signin/google-signin';
 
 // Calling the following function will open the FB login dialogue:
@@ -55,4 +54,5 @@ export const googleLogin = async () => {
         }
     };
 }
+
 

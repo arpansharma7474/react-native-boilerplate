@@ -32,14 +32,13 @@ const Login: React.FC = () => {
   /**SignIn with Facebook */
   const onFacebookClick = async () => {
     await facebookLogin()
-
   };
   /**SignIn with google */
   const onGoogleClick = async () => {
     await googleLogin()
-
   }
-
+  /**SignIn with apple */
+  const onAppleLoginClick = () => { }
   return (
     <View style={styles.container}>
       <View style={styles.container}>
@@ -60,8 +59,15 @@ const Login: React.FC = () => {
           <Text style={styles.fbText}>
             Log in with Google
           </Text>
-
         </TouchableOpacity>
+        <TouchableOpacity
+          onPress={onAppleLoginClick}
+          style={{ ...styles.fbButton, backgroundColor: "black" }}>
+          <Text style={styles.fbText}>
+            Log in with Apple
+          </Text>
+        </TouchableOpacity>
+
       </View>
     </View>
   );
