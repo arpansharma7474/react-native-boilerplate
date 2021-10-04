@@ -8,7 +8,7 @@ import NavigationService from 'app/navigation/NavigationService';
 import { executePostRequest } from '../../lib/fetchUtils';
 import { Log } from '../../lib/logger';
 import ApiConfig from '../../config/api-config';
-import { facebookLogin } from '../../store/actions/SocialLoginActions';
+import { facebookLogin, googleLogin } from '../../store/actions/SocialLoginActions';
 
 interface IState {
   loginReducer: ILoginState;
@@ -28,10 +28,17 @@ const Login: React.FC = () => {
       Log(err, "post error")
     }
   }
+
+  /**SignIn with Facebook */
   const onFacebookClick = async () => {
-    const res = await facebookLogin()
+    await facebookLogin()
 
   };
+  /**SignIn with google */
+  const onGoogleClick = async () => {
+    const res = await dispatch(googleLogin())
+    console.log(res)
+  }
 
   return (
     <View style={styles.container}>
@@ -45,6 +52,13 @@ const Login: React.FC = () => {
           style={styles.fbButton}>
           <Text style={styles.fbText}>
             Log in with facebook
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={onGoogleClick}
+          style={{ ...styles.fbButton, backgroundColor: "red" }}>
+          <Text style={styles.fbText}>
+            Log in with Google
           </Text>
 
         </TouchableOpacity>
