@@ -36,8 +36,8 @@ const Login: React.FC = () => {
   };
   /**SignIn with google */
   const onGoogleClick = async () => {
-    const res = await dispatch(googleLogin())
-    console.log(res)
+    await googleLogin()
+
   }
 
   return (
