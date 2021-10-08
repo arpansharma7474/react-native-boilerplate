@@ -3,13 +3,13 @@
 [![React Native](https://img.shields.io/badge/React%20Native-v0.64.0-green.svg)](https://facebook.github.io/react-native/)
 [![React Navigation V5](https://img.shields.io/badge/React%20Navigation-v5.9-blue.svg)](https://reactnavigation.org/)
 
-React Native Boilerplate is a starting point for React Native application. This project is configured with redux, redux saga
+React Native Boilerplate is a starting point for React Native application. This project is configured with redux, redux thunk
 and redux persist. Uses latest version of react-navigation (v5.9)
 
 <p float="left">
 <a href='http://redux.js.org'><img src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67' height='60' alt='Redux Logo' aria-label='redux.js.org' /></a>
  
-<a href='https://redux-saga.js.org/'><img src='https://redux-saga.js.org/img/Redux-Saga-Logo-Landscape.png' height='60' alt='Redux Logo' aria-label='redux-saga.js.org/' /></a>
+<a href='https://github.com/reduxjs/redux-thunk'><img src='https://i.morioh.com/74428a9fdb.png' height='60' alt='Redux Logo' aria-label='github.com/reduxjs/redux-thunk' /></a>
 
 <a href='https://callstack.github.io/react-native-paper/'><img src='https://raw.githubusercontent.com/callstack/react-native-paper/master/docs/assets/images/paper-logo.svg?sanitize=true' height='110' alt='Redux Logo' aria-label='https://callstack.github.io/react-native-paper/' /></a>
 
@@ -33,9 +33,15 @@ This Type based Architecture scales smoothly for small - medium apps. If you guy
 - [React Navigation](https://reactnavigation.org/) with [Authentication flow](https://reactnavigation.org/docs/auth-flow) baked in & theming support.
 - [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
 - [React Native Paper](https://callstack.github.io/react-native-paper/)- with theming support 
-- [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
+- [React Native Svg Icons](https://github.com/react-native-svg/react-native-svg)
+- [React Native Splash](https://www.npmjs.com/package/react-native-splash-screen)
+- [React Native Web View](https://github.com/react-native-webview/react-native-webview)
+- [React Native Image Crop Picker](https://github.com/ivpusic/react-native-image-crop-picker)
+- [React Native Permissions](https://github.com/zoontek/react-native-permissions)
+- [React Native Size Matters](https://github.com/nirsky/react-native-size-matters)
+- [React Native Device Info](https://github.com/react-native-device-info/react-native-device-info)
 - [Redux](http://redux.js.org/) with [hooks](https://react-redux.js.org/api/hooks) support
-- [Redux Saga](https://redux-saga.js.org/)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Redux Persist](https://github.com/rt2zz/redux-persist/)
 - [Jest](https://facebook.github.io/jest/)
 - [Eslint](http://eslint.org/) ([Airbnb config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb))
