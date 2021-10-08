@@ -9,7 +9,7 @@ and redux persist. Uses latest version of react-navigation (v5.9)
 <p float="left">
 <a href='http://redux.js.org'><img src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67' height='60'  alt='Redux Logo' aria-label='redux.js.org' /></a>
  
-<a href='https://github.com/reduxjs/redux-thunk'><img src='https://i.morioh.com/74428a9fdb.png' height='60'  width='300' alt='Redux Logo' aria-label='github.com/reduxjs/redux-thunk' /></a>
+<a href='https://github.com/reduxjs/redux-thunk'><img src='https://i.morioh.com/74428a9fdb.png' height='80'  width='300' alt='Redux Logo' aria-label='github.com/reduxjs/redux-thunk' /></a>
 
 <a href='https://callstack.github.io/react-native-paper/'><img src='https://raw.githubusercontent.com/callstack/react-native-paper/master/docs/assets/images/paper-logo.svg?sanitize=true' height='110' alt='Redux Logo' aria-label='https://callstack.github.io/react-native-paper/' /></a>
 
@@ -38,8 +38,10 @@ This Type based Architecture scales smoothly for small - medium apps. If you guy
 - [React Native Web View](https://github.com/react-native-webview/react-native-webview)
 - [React Native Image Crop Picker](https://github.com/ivpusic/react-native-image-crop-picker)
 - [React Native Permissions](https://github.com/zoontek/react-native-permissions)
+- [React Native Keyboard Aware Scroll View](https://www.npmjs.com/package/react-native-keyboard-aware-scroll-view)
 - [React Native Size Matters](https://github.com/nirsky/react-native-size-matters)
 - [React Native Device Info](https://github.com/react-native-device-info/react-native-device-info)
+- [React Native Net Info](https://github.com/react-native-netinfo/react-native-netinfo)
 - [Redux](http://redux.js.org/) with [hooks](https://react-redux.js.org/api/hooks) support
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Redux Persist](https://github.com/rt2zz/redux-persist/)
