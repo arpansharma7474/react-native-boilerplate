@@ -9,7 +9,7 @@ and redux persist. Uses latest version of react-navigation (v5.9)
 <p float="left">
 <a href='http://redux.js.org'><img src='https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67' height='60'  alt='Redux Logo' aria-label='redux.js.org' /></a>
  
-<a href='https://github.com/reduxjs/redux-thunk'><img src='https://i.morioh.com/74428a9fdb.png' height='80'  width='300' alt='Redux Logo' aria-label='github.com/reduxjs/redux-thunk' /></a>
+<a href='https://github.com/reduxjs/redux-thunk'><img src='https://raw.githubusercontent.com/betagouv/redux-thunk-data/master/icon.png' height='60'  width='200' alt='Redux Logo' aria-label='github.com/reduxjs/redux-thunk' /></a>
 
 <a href='https://callstack.github.io/react-native-paper/'><img src='https://raw.githubusercontent.com/callstack/react-native-paper/master/docs/assets/images/paper-logo.svg?sanitize=true' height='110' alt='Redux Logo' aria-label='https://callstack.github.io/react-native-paper/' /></a>
 
@@ -60,7 +60,7 @@ This Type based Architecture scales smoothly for small - medium apps. If you guy
 
 ## Getting Started
 
-1. Clone this repo, `git clone https://github.com/victorkvarghese/react-native-boilerplate.git <your project name>`
+1. Clone this repo, `git clone https://github.com/arpansharma7474/react-native-boilerplate <your project name>`
 2. Go to project's root directory, `cd <your project name>`
 3. Remove `.git` folder, `rm -rf .git`
 4. Use [React Native Rename](https://github.com/junedomingo/react-native-rename) to update project name `$ npx react-native-rename <newName>`
