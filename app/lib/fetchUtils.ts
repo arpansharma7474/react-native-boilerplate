@@ -3,7 +3,8 @@ import NetInfo from '@react-native-community/netinfo';
 import String from '../utils/strings';
 import ApiConfig from '../config/api-config';
 import HttpError from './HttpError';
-import { Log } from './logger';
+
+const INTERNET_ERROR_CODE = 404
 
 // Fetch Utils class containing fetch and netInfo Boilerplate
 export const executePostRequest = async (
@@ -14,7 +15,7 @@ export const executePostRequest = async (
 ) => {
   const netInfo = await NetInfo.fetch();
   if (!netInfo.isConnected)
-    throw new HttpError({ message: String.error_internet_connection, statusCode: 400 })
+    throw new HttpError({ message: String.error_internet_connection, statusCode: INTERNET_ERROR_CODE })
   // create form body request for urlEncoded requested
   const body = isUrlEncoded ? encodeParamsObject(paramsObject) : JSON.stringify(paramsObject);
   const postResponse = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
@@ -40,7 +41,7 @@ export const executeGetRequest = async (
 ) => {
   const netInfo = await NetInfo.fetch();
   if (!netInfo.isConnected)
-    throw new HttpError({ message: String.error_internet_connection, statusCode: 400 })
+    throw new HttpError({ message: String.error_internet_connection, statusCode: INTERNET_ERROR_CODE })
   const getResponse = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
     method: 'GET',
     headers: getAPIHeader(token),
@@ -63,7 +64,7 @@ export const executePutRequest = async (
 ) => {
   const netInfo = await NetInfo.fetch();
   if (!netInfo.isConnected)
-    throw new HttpError({ message: String.error_internet_connection, statusCode: 400 })
+    throw new HttpError({ message: String.error_internet_connection, statusCode: INTERNET_ERROR_CODE })
   const putResponse = await fetch(`${ApiConfig.BASE_URL}/${endpoint}`, {
     method: 'PUT',
     headers: getAPIHeader(token),

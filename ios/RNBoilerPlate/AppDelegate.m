@@ -13,6 +13,7 @@
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Firebase.h>
+#import "RNSplashScreen.h"
 
 
 static void InitializeFlipper(UIApplication *application) {
@@ -44,7 +45,9 @@ static void InitializeFlipper(UIApplication *application) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
  
+ 
    [FIRApp configure];
+
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"RNBoilerPlate"
@@ -66,6 +69,7 @@ static void InitializeFlipper(UIApplication *application) {
 	
     didFinishLaunchingWithOptions:launchOptions];
 
+  [RNSplashScreen show];
   return YES;
 }
 

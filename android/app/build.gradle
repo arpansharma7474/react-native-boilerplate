@@ -121,6 +121,13 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> feat/basic
+>>>>>>> feat/firebase
 
 android {
     ndkVersion rootProject.ext.ndkVersion
