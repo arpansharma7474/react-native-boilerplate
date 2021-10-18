@@ -10,7 +10,7 @@ import { Log } from '../lib/logger';
 import {
     checkCameraPermission,
     checkGalleryPermission
-} from "../lib/permissions/permissionHelper"
+} from "./permissions"
 import Strings from "../utils/strings"
 
 const DEFAULT_OPTIONS: Options = {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { IconTypes } from './images';
 
 export const getIcons = (type: IconTypes, iconSize = 20) => {

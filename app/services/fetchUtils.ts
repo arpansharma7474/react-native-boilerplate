@@ -1,8 +1,8 @@
-import { checkResponse } from './checkResponse';
+import { checkResponse } from '../lib/checkResponse';
 import NetInfo from '@react-native-community/netinfo';
 import String from '../utils/strings';
 import ApiConfig from '../config/api-config';
-import HttpError from './HttpError';
+import HttpError from '../lib/HttpError';
 
 const INTERNET_ERROR_CODE = 404
 

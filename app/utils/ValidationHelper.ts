@@ -1,4 +1,3 @@
-import ApiConfig from "../config/api-config";
 import strings from "./strings";
 
 interface ValidationType {

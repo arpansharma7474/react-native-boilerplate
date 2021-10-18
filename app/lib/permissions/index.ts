@@ -7,35 +7,20 @@ import {
 } from 'react-native-permissions';
 import { Linking, Platform } from 'react-native';
 import { showAlert } from '../alertHelper'
-import { Log } from '../Logger';
 import Permissions from "./types"
 import Strings from '../../utils/strings';
 
-export const PERMISSION_DENIED = -1;
-export const PERMISSION_SUCCESS = 1;
-export const PERMISSION_BLOCKED = 0;
-
-export async function checkCameraPermission() {
-    let permission: Permission = Permissions.ANDROID_CAMERA
-    if (Platform.OS === "ios") {
-        permission = Permissions.IOS_CAMERA_PERMISSION
-    }
-    return await checkPermission(permission, Strings.str_permission_camera)
-}
-
-export async function checkGalleryPermission() {
-    let permission: Permission = PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE
-    if (Platform.OS === "ios") {
-        permission = PERMISSIONS.IOS.PHOTO_LIBRARY
-    }
-    return await checkPermission(permission, Strings.str_permission_gallery)
-}
-
+/**
+ * 
+ * @param permission Permission name 
+ * @param text Text to be shown whilw asking for the permission
+ * @returns Promise with permission status
+ */
 export const checkPermission = (
     permission: Permission,
     text: string,
 ): Promise<number> => {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, _) => {
         const result = await check(permission);
         switch (result) {
             case RESULTS.UNAVAILABLE:
@@ -62,4 +47,20 @@ export const openSettings = async (text: string) => {
     const alertRes = await showAlert(text, 'Alert', true, 'Open Settings');
     alertRes && Linking.openSettings();
 };
+
+export async function checkCameraPermission(): Promise<number> {
+    let permission: Permission = Permissions.ANDROID_CAMERA
+    if (Platform.OS === "ios") {
+        permission = Permissions.IOS_CAMERA_PERMISSION
+    }
+    return await checkPermission(permission, Strings.str_permission_camera)
+}
+
+export async function checkGalleryPermission(): Promise<number> {
+    let permission: Permission = PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE
+    if (Platform.OS === "ios") {
+        permission = PERMISSIONS.IOS.PHOTO_LIBRARY
+    }
+    return await checkPermission(permission, Strings.str_permission_gallery)
+}
 
