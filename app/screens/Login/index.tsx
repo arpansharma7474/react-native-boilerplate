@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './styles';
 import { ILoginState } from 'app/models/reducers/login';
 import NavigationService from 'app/navigation/NavigationService';
-import { executePostRequest } from '../../lib/fetchUtils';
+import { executePostRequest } from '../../services/fetchUtils';
 import { Log } from '../../lib/logger';
 import ApiConfig from '../../config/api-config';
 
