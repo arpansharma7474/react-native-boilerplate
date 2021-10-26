@@ -21,13 +21,13 @@ const persistConfig = {
 }
 const persistedReducer = persistReducer(persistConfig, persistSlice.reducer)
 
-const reducer = combineReducers({
+const rootReducer = combineReducers({
   counter: counterSlice.reducer,
   persist: persistedReducer
 })
 
 const store = configureStore({
-  reducer,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -38,5 +38,5 @@ const store = configureStore({
 
 export const persistor = persistStore(store)
 // type to be used in useSelector
-export type RootState = ReturnType<typeof reducer>;
+export type RootState = ReturnType<typeof rootReducer>;
 export default store

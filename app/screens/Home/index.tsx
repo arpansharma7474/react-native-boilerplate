@@ -1,28 +1,22 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
-import NavigationService from 'app/navigation/NavigationService';
 import { useDispatch, useSelector } from 'react-redux';
-import * as loginActions from 'app/store/actions/loginActions';
-import { ILoginState } from 'app/models/reducers/login';
-
-
-interface IState {
-  loginReducer: ILoginState;
-}
 import styles from './styles';
+import counterSlice from '../../store/slices/counterSlice';
+import { RootState } from '../../store';
+
 const Home: React.FC = () => {
   const dispatch = useDispatch();
-  const userName = useSelector((state: IState) => state.loginReducer.username);
+  const count = useSelector((state: RootState) => state.counter.count);
 
   const onLogout = () => {
-    dispatch(loginActions.logOut()),
-      NavigationService.navigate("Login");
+    dispatch(counterSlice.actions.incremented(3))
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.login}>userName:{userName}</Text>
+      <Text style={styles.login}>count:{count}</Text>
       <Button mode="outlined" onPress={onLogout}>
         Logout
       </Button>

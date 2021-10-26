@@ -6,14 +6,18 @@ import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import splashScreen from 'react-native-splash-screen';
 import { useNavigation } from '@react-navigation/native';
+import { BaseParamsList } from '../../navigation/types';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 const Splash = () => {
-    const navigation = useNavigation();
+    type NavigationType = StackNavigationProp<BaseParamsList, 'splash'>;
+    const navigation = useNavigation<NavigationType>();
+
     useEffect(() => {
         setTimeout(() => {
             navigation.reset({
                 index: 0,
-                routes: [{ name: "Login" }],
+                routes: [{ name: "home" }],
             })
             splashScreen.hide();
         }, 1000);
