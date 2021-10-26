@@ -6,7 +6,7 @@
 React Native Boilerplate is a starting point for React Native application. This project is configured with reduxjs/toolkit. Uses latest version of react-navigation (v5.9)
 
 <p float="left">
-<a href='http://redux.js.org'><img src='https://redux-toolkit.js.org/img/redux-logo-landscape.png' height='60'  alt='Redux Logo' aria-label='redux.js.org' /></a>
+<a href='http://redux.js.org'><img src='https://redux-toolkit.js.org/img/redux-logo-landscape.png' height='110'  alt='Redux Logo' aria-label='redux.js.org' /></a>
  
 <a href='https://callstack.github.io/react-native-paper/'><img src='https://raw.githubusercontent.com/callstack/react-native-paper/master/docs/assets/images/paper-logo.svg?sanitize=true' height='110' alt='Redux Logo' aria-label='https://callstack.github.io/react-native-paper/' /></a>
 
