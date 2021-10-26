@@ -1,26 +1,42 @@
-import AsyncStorage from '@react-native-community/async-storage';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { persistReducer } from 'redux-persist';
-import thunk from 'redux-thunk';
-import { loadingReducer } from './reducers/loadingReducer';
-import { loginReducer } from './reducers/loginReducer';
-import { themeReducer } from './reducers/themeReducer';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import counterSlice from './slices/counterSlice';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import persistSlice from './slices/persistSlice';
 
+// redux persist integration with toolkit https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist
 const persistConfig = {
-  storage: AsyncStorage,
-  key: 'persistedReducer',
+  key: 'root',
   version: 1,
-};
+  storage,
+}
+const persistedReducer = persistReducer(persistConfig, persistSlice.reducer)
 
-const rootReducer = combineReducers({
-  persistedReducer: persistReducer(persistConfig, loginReducer),
-  loginReducer: loginReducer,
-  loadingReducer: loadingReducer,
-  themeReducer: themeReducer
-});
+const reducer = combineReducers({
+  counter: counterSlice.reducer,
+  persist: persistedReducer
+})
 
-const store = createStore(rootReducer, {}, applyMiddleware(thunk));
+const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+})
 
+export const persistor = persistStore(store)
 // type to be used in useSelector
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof reducer>;
 export default store
