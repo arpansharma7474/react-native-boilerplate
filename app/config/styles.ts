@@ -5,6 +5,7 @@
 const AppStyles = {
   color: {
     COLOR_THEME: '#2ec7ab',
+    GREY: '#a0a0a0'
   },
   fonts: {
     // FONT_REGULAR: 'Roboto-Regular',
