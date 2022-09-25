@@ -1,4 +1,4 @@
-import { Dimensions, NativeModules } from "react-native";
+import { Dimensions, NativeModules } from 'react-native';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -6,8 +6,8 @@ export const windowHeight = Dimensions.get('window').height;
 // Status bar height
 export const getStatuBarHeight = () => {
   const { StatusBarManager } = NativeModules;
-  return StatusBarManager.HEIGHT
-}
+  return StatusBarManager.HEIGHT;
+};
 
 /**common function for shadow in android and ios */
 export const elevationShadowStyle = (elevation: number) => {
@@ -19,12 +19,3 @@ export const elevationShadowStyle = (elevation: number) => {
     shadowRadius: 0.8 * elevation,
   };
 };
-
-
-
-
-
-
-
-
-

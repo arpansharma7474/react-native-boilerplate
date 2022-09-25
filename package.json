@@ -8,8 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "update:pods": "npx pod-install ios",
-    "postinstall": "yarn run update:pods"
+    "postinstall": "npx pod-install ios"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.9",
