@@ -1,16 +1,22 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Button } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './styles';
-import counterSlice from '../../store/slices/counterSlice';
-import { RootState } from '../../store';
+import { AppDispatch, RootState } from '../../store';
+import { fetchMovies } from 'app/store/slices/resultsSlice';
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const resultsPayload = useSelector((state: RootState) => state.results);
 
-  console.log(resultsPayload, 'resultsPayload');
+  React.useEffect(() => {
+    dispatch(
+      fetchMovies({
+        query: 'Lord of',
+        page: 1,
+      }),
+    );
+  }, [dispatch]);
 
   return (
     <View style={styles.container}>

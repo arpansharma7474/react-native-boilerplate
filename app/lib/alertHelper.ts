@@ -7,7 +7,7 @@ export const showAlert = (
   positiveText?: string,
   negativeText?: string,
 ): Promise<number> => {
-  const isJson = (message: string | object) => {
+  const isJson = message => {
     return typeof message === 'object';
   };
 

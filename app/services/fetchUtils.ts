@@ -54,9 +54,10 @@ export const executeGetRequest = async (endpoint: string) => {
   });
   checkResponse(getResponse);
   if (!getResponse.ok) {
+    const json = await getResponse.clone().json();
     throw new HttpError({
       statusCode: getResponse.status,
-      message: getResponse.statusText,
+      message: json.message || getResponse.statusText,
     });
   }
   const res = await getResponse.json();
