@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationContainer, Theme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { navigationRef } from './NavigationService';
 import { BaseParamsList } from './types';
@@ -12,7 +12,8 @@ const Navigation = () => {
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         initialRouteName={'splash'}
-        headerMode="none">
+        screenOptions={{ headerShown: false }}
+      >
         <Stack.Screen
           name="splash"
           component={Splash}
@@ -24,11 +25,7 @@ const Navigation = () => {
             // headerRight: () => <ThemeController />,
           }}
         />
-        <Stack.Screen
-          name="home"
-          component={Home}
-        />
-
+        <Stack.Screen name="home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
