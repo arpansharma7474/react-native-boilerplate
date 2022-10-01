@@ -8,18 +8,13 @@ import { RootState } from '../../store';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();
-  const count = useSelector((state: RootState) => state.counter.count);
+  const resultsPayload = useSelector((state: RootState) => state.results);
 
-  const onLogout = () => {
-    dispatch(counterSlice.actions.incremented());
-  };
+  console.log(resultsPayload, 'resultsPayload');
 
   return (
     <View style={styles.container}>
-      <Text style={styles.login}>count:{count}</Text>
-      <Button mode="outlined" onPress={onLogout}>
-        Logout
-      </Button>
+      <Text style={styles.login}>{JSON.stringify(resultsPayload)}</Text>
     </View>
   );
 };

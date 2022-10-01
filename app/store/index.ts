@@ -12,6 +12,7 @@ import {
 } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import persistSlice from './slices/persistSlice';
+import resultsSlice from './slices/resultsSlice';
 
 // redux persist integration with toolkit https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist
 const persistConfig = {
@@ -24,6 +25,7 @@ const persistedReducer = persistReducer(persistConfig, persistSlice.reducer);
 const rootReducer = combineReducers({
   counter: counterSlice.reducer,
   persist: persistedReducer,
+  results: resultsSlice.reducer,
 });
 
 const store = configureStore({
