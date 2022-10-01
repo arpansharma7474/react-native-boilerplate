@@ -76,13 +76,13 @@ PODS:
   - hermes-engine (0.70.1)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
-  - Permission-Camera (3.0.5):
+  - Permission-Camera (3.6.1):
     - RNPermissions
-  - Permission-MediaLibrary (3.0.5):
+  - Permission-MediaLibrary (3.6.1):
     - RNPermissions
-  - Permission-PhotoLibrary (3.0.5):
+  - Permission-PhotoLibrary (3.6.1):
     - RNPermissions
-  - Permission-PhotoLibraryAddOnly (3.0.5):
+  - Permission-PhotoLibraryAddOnly (3.6.1):
     - RNPermissions
   - RCT-Folly (2021.07.22.00):
     - boost
@@ -318,8 +318,8 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-splash-screen (3.2.0):
-    - React
+  - react-native-splash-screen (3.3.0):
+    - React-Core
   - react-native-webview (11.23.1):
     - React-Core
   - React-perflogger (0.70.1)
@@ -390,22 +390,18 @@ PODS:
     - React-perflogger (= 0.70.1)
   - RNCAsyncStorage (1.17.10):
     - React-Core
-  - RNCMaskedView (0.1.11):
-    - React
-  - RNDeviceInfo (8.4.0):
+  - RNDeviceInfo (10.2.0):
     - React-Core
-  - RNGestureHandler (1.10.3):
-    - React-Core
-  - RNImageCropPicker (0.36.3):
+  - RNImageCropPicker (0.38.0):
     - React-Core
     - React-RCTImage
-    - RNImageCropPicker/QBImagePickerController (= 0.36.3)
+    - RNImageCropPicker/QBImagePickerController (= 0.38.0)
     - TOCropViewController
-  - RNImageCropPicker/QBImagePickerController (0.36.3):
+  - RNImageCropPicker/QBImagePickerController (0.38.0):
     - React-Core
     - React-RCTImage
     - TOCropViewController
-  - RNPermissions (3.0.5):
+  - RNPermissions (3.6.1):
     - React-Core
   - RNReanimated (2.10.0):
     - DoubleConversion
@@ -513,9 +509,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
-  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
-  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -627,12 +621,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
-  RNCMaskedView:
-    :path: "../node_modules/@react-native-community/masked-view"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
-  RNGestureHandler:
-    :path: "../node_modules/react-native-gesture-handler"
   RNImageCropPicker:
     :path: "../node_modules/react-native-image-crop-picker"
   RNPermissions:
@@ -666,10 +656,10 @@ SPEC CHECKSUMS:
   hermes-engine: 9cd393f741bfa14d1d0cd90cc373e3619c0bc7ea
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
-  Permission-Camera: 24c37a846ff69e0eb7fd4264346550850d5b707a
-  Permission-MediaLibrary: 01085a7e58d0ffc5a6ecba2ba7874404e8ac10db
-  Permission-PhotoLibrary: 48e58291bd650b4f197cf542dad53f41dea4e84f
-  Permission-PhotoLibraryAddOnly: 90b427e4a2acd37d1128618704b53364d73826c2
+  Permission-Camera: 4c0b610b46391c85d2d50f1446d98b4103b14b5a
+  Permission-MediaLibrary: 70811d1674033ac426683d3c962644b11eb22fdd
+  Permission-PhotoLibrary: b3b35c4574586c9835ecb3d432b181b6709ea517
+  Permission-PhotoLibraryAddOnly: 6af7c815b48671dcb52dd3ca57260d574bba0c8d
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 1b4e0388c8ad776b2d23f8135926fa4e7ddacdf4
   RCTTypeSafety: 23dc09d6e9ed210fabab031a568bb0194d492385
@@ -687,7 +677,7 @@ SPEC CHECKSUMS:
   React-logger: 7bd569e3857d74ed412ce0a5c51f421ff7d4ca7f
   react-native-netinfo: 5af88da7b7067dd800aac6ac97a41839c328a243
   react-native-safe-area-context: ec0d85aca8110dae9327430a9541fec165352dab
-  react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
+  react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-webview: a192040320142d8f10d652a745c46e4f43e37f8c
   React-perflogger: 48c6b363e867d64b682e84f80ca45636bd65e19c
   React-RCTActionSheet: 33c74fe5c754835e3715c300618da9aa2f7203fa
@@ -702,11 +692,9 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: a11d0c2e14140baf1e449264ca9168ae9ae6bbd0
   ReactCommon: 7f86326b92009925c6dcf93f8e825060171c379f
   RNCAsyncStorage: 73b194e58ded504eee17b9a3c125651e2507ddde
-  RNCMaskedView: f127cd9652acfa31b91dcff613e07ba18b774db6
-  RNDeviceInfo: 99b0a4fc191808e58e0a045640706100fc3d771c
-  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNImageCropPicker: 97289cd94fb01ab79db4e5c92938be4d0d63415d
-  RNPermissions: 3e5bb8afd93c787681bbacbf54d586a6272ecc92
+  RNDeviceInfo: ad5db4b906f20a83ac09457ede425e8387c427c3
+  RNImageCropPicker: ffbba608264885c241cbf3a8f78eb7aeeb978241
+  RNPermissions: 79d0c889562fd792329821bea3155fe6eb54d359
   RNReanimated: 60e291d42c77752a0f6d6f358387bdf225a87c6e
   RNScreens: 0df01424e9e0ed7827200d6ed1087ddd06c493f9
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f

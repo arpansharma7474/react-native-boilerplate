@@ -7,24 +7,24 @@ import { View } from 'react-native';
 import splashScreen from 'react-native-splash-screen';
 import { useNavigation } from '@react-navigation/native';
 import { BaseParamsList } from '../../navigation/types';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 const Splash = () => {
-    type NavigationType = StackNavigationProp<BaseParamsList, 'splash'>;
-    const navigation = useNavigation<NavigationType>();
+  type NavigationType = NativeStackNavigationProp<BaseParamsList, 'splash'>;
+  const navigation = useNavigation<NavigationType>();
 
-    useEffect(() => {
-        setTimeout(() => {
-            navigation.reset({
-                index: 0,
-                routes: [{ name: "home" }],
-            })
-            splashScreen.hide();
-        }, 1000);
-    }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'home' }],
+      });
+      splashScreen.hide();
+    }, 1000);
+  }, [navigation]);
 
-    // returns empty view so that the transition is smooth
-    return <View />;
+  // returns empty view so that the transition is smooth
+  return <View />;
 };
 
 export default Splash;
