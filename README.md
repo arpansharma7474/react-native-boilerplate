@@ -7,17 +7,17 @@ React Native Boilerplate is a starting point for React Native application. This 
 
 <p float="left">
 <a href='http://redux.js.org'><img src='https://redux-toolkit.js.org/img/redux-logo-landscape.png' height='110'  alt='Redux Logo' aria-label='redux.js.org' /></a>
- 
+
 <a href='https://callstack.github.io/react-native-paper/'><img src='https://raw.githubusercontent.com/callstack/react-native-paper/master/docs/assets/images/paper-logo.svg?sanitize=true' height='110' alt='Redux Logo' aria-label='https://callstack.github.io/react-native-paper/' /></a>
 
 </p>
 
 ## Features
+
 - [Typescript](https://www.typescriptlang.org/) support.
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Navigation](https://reactnavigation.org/) with [Authentication flow](https://reactnavigation.org/docs/auth-flow) baked in & theming support.
-- [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
-- [React Native Paper](https://callstack.github.io/react-native-paper/)- with theming support 
+- [React Native Paper](https://callstack.github.io/react-native-paper/)- with theming support
 - [React Native Svg Icons](https://github.com/react-native-svg/react-native-svg)
 - [React Native Splash](https://www.npmjs.com/package/react-native-splash-screen)
 - [React Native Web View](https://github.com/react-native-webview/react-native-webview)
@@ -30,9 +30,10 @@ React Native Boilerplate is a starting point for React Native application. This 
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Redux Persist](https://github.com/rt2zz/redux-persist/)
 - [Jest](https://facebook.github.io/jest/)
-- [Eslint](http://eslint.org/) ([Airbnb config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb))
+- [Eslint](http://eslint.org/)
 
 ## Prerequisites
+
 - [Node](https://nodejs.org) v10 (it is recommended to install it via [NVM](https://github.com/creationix/nvm))
 - A development machine set up for React Native by following [these instructions](https://facebook.github.io/react-native/docs/getting-started.html)
 
