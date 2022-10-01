@@ -8,7 +8,7 @@ React Native Boilerplate is a starting point for React Native application. This 
 <p float="left">
 <a href='http://redux.js.org'><img src='https://redux-toolkit.js.org/img/redux-logo-landscape.png' height='110'  alt='Redux Logo' aria-label='redux.js.org' /></a>
 
-<a href='https://www.typescriptlang.org/'><img src='https://css-tricks.com/wp-content/uploads/2022/01/typescript-logo.png' height='110'  alt='TS Logo' aria-label='TypeScript' /></a>
+<a href='https://www.typescriptlang.org/'><img src='https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_original_logo_icon_146317.png' height='110'  alt='TS Logo' aria-label='TypeScript' /></a>
 
 <a href='https://callstack.github.io/react-native-paper/'><img src='https://raw.githubusercontent.com/callstack/react-native-paper/master/docs/assets/images/paper-logo.svg?sanitize=true' height='110' alt='Redux Logo' aria-label='https://callstack.github.io/react-native-paper/' /></a>
 
