@@ -1,4 +1,4 @@
 export type BaseParamsList = {
-   splash: undefined,
-   home: undefined,
-}
+  splash: undefined;
+  home: undefined;
+};

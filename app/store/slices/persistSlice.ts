@@ -1,13 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const persistSlice = createSlice({
-   name: 'persistSlice',
-   initialState: {
-      userId: "default",
-   },
-   reducers: {
+  name: 'persistSlice',
+  initialState: {
+    userId: 'default',
+  },
+  reducers: {},
+});
 
-   }
-})
-
-export default persistSlice
+export default persistSlice;

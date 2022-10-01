@@ -7,7 +7,7 @@ export const showAlert = (
   positiveText?: string,
   negativeText?: string,
 ): Promise<number> => {
-  const isJson = (message: any) => {
+  const isJson = (message: string | object) => {
     return typeof message === 'object';
   };
 
@@ -17,16 +17,16 @@ export const showAlert = (
       isJson(message) ? JSON.stringify(message) : message.toString(),
       showCancel
         ? [
-          {
-            text: negativeText ? negativeText : 'Cancel',
-            style: 'cancel',
-            onPress: () => resolve(0),
-          },
-          {
-            text: positiveText ? positiveText : 'Ok',
-            onPress: () => resolve(1),
-          },
-        ]
+            {
+              text: negativeText ? negativeText : 'Cancel',
+              style: 'cancel',
+              onPress: () => resolve(0),
+            },
+            {
+              text: positiveText ? positiveText : 'Ok',
+              onPress: () => resolve(1),
+            },
+          ]
         : [{ text: 'Ok', onPress: () => resolve(1) }],
     );
   });

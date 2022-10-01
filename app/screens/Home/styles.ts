@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
   },
   login: {
     marginVertical: 30,
-    fontWeight: "bold",
-    fontSize: 20
+    fontWeight: 'bold',
+    fontSize: 20,
   },
 });
 

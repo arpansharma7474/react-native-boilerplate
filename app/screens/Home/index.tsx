@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   const count = useSelector((state: RootState) => state.counter.count);
 
   const onLogout = () => {
-    dispatch(counterSlice.actions.incremented(3))
+    dispatch(counterSlice.actions.incremented());
   };
 
   return (
